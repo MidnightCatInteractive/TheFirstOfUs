@@ -12,4 +12,4 @@ In this game you are a Neanderthal man and you have to learn how to survive in a
 
 
 
-* every similarity with some already existing games is a total coincidence
+** every similarity with some already existing games is a total coincidence
