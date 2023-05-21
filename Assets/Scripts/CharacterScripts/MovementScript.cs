@@ -56,6 +56,11 @@ public class MovementScript : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (!PauseMenuScript.isPaused) MovePlayer();
+    }
+
     private void GetInput()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -79,9 +84,10 @@ public class MovementScript : MonoBehaviour
         {
             _rigidbody.AddForce(moveDirection.normalized * moveSpeed * 2f * airMultiplier, ForceMode.Force);
         }
+
         if (Input.GetKey(KeyCode.LeftShift)) {
             moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-            _rigidbody.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            _rigidbody.AddForce(moveDirection.normalized * moveSpeed * 5f, ForceMode.Force);
         }
         else {
             moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
