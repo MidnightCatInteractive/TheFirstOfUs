@@ -58,6 +58,8 @@ AudioMixerController:
     name: AmbienceVolume
   - guid: a1a317116e3dda74881421a4428e9bed
     name: FootstepsVolume
+  - guid: 29556d0375a0fa94e8b87d38a387ed56
+    name: MasterVolume
   - guid: 926107054ba753b43b5cf27557b16853
     name: MusicVolume
   - guid: 76fdc890e71546845b46927afa66263a
