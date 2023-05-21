@@ -8,7 +8,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenu;
     public static bool isPaused;
 
-    void Start()
+    void Awake()
     {
         pauseMenu.SetActive(false);
     }
