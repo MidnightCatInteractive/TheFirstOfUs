@@ -62,7 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138669a60fd8dc345859b20ddc2ad589, type: 3}
   m_Name: GameDatabase
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - {fileID: 3573044908038844153}
   currencies: []
   raritys: []
   categories:
@@ -101,10 +102,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cefcd19cdc9839d449772c4dce1503f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoSave: 1
+  autoSave: 0
   savingKey: Player
   savingRate: 60
   provider: 0
+--- !u!114 &3573044908038844153
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Berries
+  m_EditorClassIdentifier: 
+  m_Id: c9945c83-79a2-4eea-b215-bb62abaf0b51
+  m_ItemName: Berries
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 21300000, guid: c11ca993f17417d40bc0966f07565d84, type: 3}
+  m_Prefab: {fileID: 0}
+  m_Description: 
+  m_Category: {fileID: -2403412033761489193}
+  m_IsSellable: 0
+  m_BuyPrice: 0
+  m_CanBuyBack: 1
+  m_BuyCurrency: {fileID: 0}
+  m_SellPrice: 0
+  m_SellCurrency: {fileID: 0}
+  m_Stack: 1
+  m_MaxStack: 20
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 2
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: Blacksmithy
+  m_CraftingModifier:
+    modifiers: []
+  ingredients: []
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &3975980712967233063
 MonoBehaviour:
   m_ObjectHideFlags: 1
