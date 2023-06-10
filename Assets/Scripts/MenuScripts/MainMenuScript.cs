@@ -16,6 +16,11 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("OptionsMenu");
     }
 
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
