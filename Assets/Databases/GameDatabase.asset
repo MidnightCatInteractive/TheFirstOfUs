@@ -151,10 +151,25 @@ MonoBehaviour:
   properties: []
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
-  actions: []
+  actions:
+  - rid: 1808575924255850496
+  - rid: 1808575924255850497
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1808575924255850496
+      type: {class: Log, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Log
+        m_Enabled: 0
+        m_Message: Eating...
+    - rid: 1808575924255850497
+      type: {class: ReduceStack, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.ReduceStack
+        m_Enabled: 1
+        item: {fileID: 3573044908038844153}
+        m_Amount: 1
 --- !u!114 &3975980712967233063
 MonoBehaviour:
   m_ObjectHideFlags: 1
