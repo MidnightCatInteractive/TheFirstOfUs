@@ -1,9 +1,12 @@
+using System.Linq.Expressions;
+using System.Diagnostics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using UnityEngine;
+// using Debug = UnityEngine.Debug;
 
 public class MovementScript : MonoBehaviour
 {
@@ -26,6 +29,9 @@ public class MovementScript : MonoBehaviour
 
     [SerializeField] private Transform orientation;
     
+    [Header("Swimming")]
+    public float swimSpeed = 3f;
+    private bool isSwimming = false;
 
     [Header("Input Check")]
     private float horizontalInput;
@@ -76,6 +82,13 @@ public class MovementScript : MonoBehaviour
 
     private void MovePlayer()
     {
+        if (isSwimming)
+        {
+
+            Swim();
+        }
+        else 
+        {
         if (isGrounded)
         {
             _rigidbody.AddForce(moveDirection.normalized * moveSpeed * 2f, ForceMode.Force);
@@ -93,8 +106,16 @@ public class MovementScript : MonoBehaviour
             moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
             _rigidbody.AddForce(moveDirection.normalized * moveSpeed * 2f, ForceMode.Force);
         }
+        }
     }
+    private void Swim()
+    {
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        _rigidbody.AddForce(moveDirection * swimSpeed *2f, ForceMode.Force);
 
+        float verticalVelocity = _rigidbody.velocity.y;
+        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, Mathf.Max(0f, verticalVelocity), _rigidbody.velocity.z);
+    }
     private void SpeedControl()
     {
         Vector3 flatVelocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
@@ -114,5 +135,24 @@ public class MovementScript : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            isSwimming = true;
+            _rigidbody.useGravity = false;
+            _rigidbody.drag = 0f;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            isSwimming = false;
+            _rigidbody.useGravity = true;
+            _rigidbody.drag = groundDrag;
+        }
     }
 }
