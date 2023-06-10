@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1960013661, guid: d638ef2ca2fe20c4c9c08e125692d3f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1756079314527634839, guid: d638ef2ca2fe20c4c9c08e125692d3f4, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -135,5 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa7e020bdb04b941809d77c4b160139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 0}
   foodValue: 10
